@@ -87,7 +87,7 @@ function clearData(){
 }
 
 // read
-function newData(){
+function displayDate(){
     let table = '';
     for(let i = 0; i < dataProduct.length; i++){
         table += `
@@ -121,7 +121,7 @@ function newData(){
      }
 
 }
-newData()
+displayDate()
 
 // delete
 
@@ -129,13 +129,13 @@ function deleteData(i)
 {
     dataProduct.splice(i,1);
     localStorage.product = JSON.stringify(dataProduct);
-    newData()
+    displayDate()
 }
 
 function deleteAll(){
     localStorage.removeItem('product');
     dataProduct.splice(0)
-    newData()
+    displayDate()
 }
 function getSearchMood(id){
     let search = document.getElementById('search');
