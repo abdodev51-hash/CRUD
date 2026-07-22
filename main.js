@@ -97,8 +97,11 @@ function clearData(){
     category.value = '';
 }
 
-// read
+// rea
 function displayData(){
+
+function displayData(){
+
     let table = '';
     for(let i = 0; i < dataProduct.length; i++){
         table += `
@@ -119,7 +122,7 @@ function displayData(){
                     <td><button onclick="deleteData(${i})" id="delete">Delete</button></td>
                 </tr>
             </tbody>
-        `
+            }        `
     }
      document.getElementById('tbody').innerHTML = table;
      let btnDelete = document.getElementById('deleteAll');
@@ -132,7 +135,12 @@ function displayData(){
      }
 
 }
+
+}
+
 displayData()
+
+displayDate()
 
 // delete
 
@@ -140,13 +148,21 @@ function deleteData(i)
 {
     dataProduct.splice(i,1);
     localStorage.product = JSON.stringify(dataProduct);
+
     displayData()
+
+    displayDate()
+
 }
 
 function deleteAll(){
     localStorage.removeItem('product');
     dataProduct.splice(0)
+
     displayData()
+
+    displayDate()
+
 }
 
 function updateData(i){
